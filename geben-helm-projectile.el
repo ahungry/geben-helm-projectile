@@ -51,9 +51,6 @@
 Use a prefix ARG to force a cache refresh."
   (interactive "P")
     (geben-with-current-session session
-      (cl-flet ((geben-open-file-fn
-                 (file)
-                 (geben-open-file (geben-source-fileuri session file))))
       (if (projectile-project-p)
           (projectile-maybe-invalidate-cache arg))
       (let ((helm-ff-transformer-show-only-basename nil)
@@ -63,13 +60,15 @@ Use a prefix ARG to force a cache refresh."
                         (geben-source-fileuri session (buffer-file-name))))))
 	(when file-path
           (cd file-path))
-        (add-to-list 'my-sources '(action ("Geben" . geben-open-file-fn)))
+        (add-to-list
+         'my-sources
+         '(action ("Geben" . (lambda (file) (geben-open-file (geben-source-fileuri session file))))))
         (helm :sources my-sources
               :buffer "*helm projectile*"
               :prompt (projectile-prepend-project-name (if (projectile-project-p)
                                                            "pattern: "
                                                          "Switch to project: "))
-              )))))
+              ))))
 
 ;;;###autoload
 (when (and load-file-name (boundp 'load-path))
