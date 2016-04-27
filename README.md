@@ -1,59 +1,36 @@
-# Color Theme Ahungry
+# Geben Helm Projectile
 
-[![MELPA](http://melpa.org/packages/ahungry-theme-badge.svg)](http://melpa.org/#/ahungry-theme)
+[![MELPA](http://melpa.org/packages/geben-helm-projectile-badge.svg)](http://melpa.org/#/geben-helm-projectile)
 
-This is a color theme with bold bright colors that works well with GNU
-Emacs in non window mode.
+This is a small plugin that allows opening of geben debug files using
+the helm-projectile interface (much nicer than manually browsing to
+the files).
 
 ## Installation
 To install, clone the repository via:
 
 ```
 cd ~/.emacs.d
-git clone https://github.com/ahungry/color-theme-ahungry.git
+git clone https://github.com/ahungry/geben-helm-projectile.git
 ```
 
 Then, make sure to add the following to your ~/.emacs:
-### Using load-theme
-```lisp
-(add-to-list 'custom-theme-load-path "~/.emacs.d/color-theme-ahungry/")
-(load-theme 'ahungry t)
-```
-the first time you load it, you will need to accept the theme.
 
-### Using color-theme.el
+### Using require
 
 ```lisp
-(add-to-list 'load-path "~/.emacs.d/color-theme-ahungry/")
-(require 'color-theme-ahungry)
-(color-theme-ahungry)
+(add-to-list 'load-path "~/.emacs.d/geben-helm-projectile/")
+(require 'geben-helm-projectile)
 ```
 
-## Different sample shots
-These are shots in various language modes with random wallpapers
-taken while using emacs in rxvt-unicode with a transparent background
-set under the ~/.Xresources config.
+### Using geben-helm-projectile.el
 
-### Emacs Config (~/.emacs)
-![~/.emacs](http://ahungry.com/images/color-theme-ahungry/require.png)
+During an interactive geben debug session, simply use:
 
-### Common Lisp
-![Common Lisp](http://ahungry.com/images/color-theme-ahungry/common-lisp.png)
-
-### PHP
-![PHP](http://ahungry.com/images/color-theme-ahungry/php.png)
-
-### Perl
-![Perl](http://ahungry.com/images/color-theme-ahungry/perl.png)
-
-### C
-![C](http://ahungry.com/images/color-theme-ahungry/c.png)
-
-### Javascript
-![Javascript](http://ahungry.com/images/color-theme-ahungry/javascript.png)
-
-### Assembly
-![Assembly](http://ahungry.com/images/color-theme-ahungry/assembly.png)
+```lisp
+M-x geben-helm-projectile/open-file
+```
+to open the file prompt for the current repository.
 
 ## License
 GPLv3
