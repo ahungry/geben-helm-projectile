@@ -5,7 +5,7 @@
 ;; Author: Matthew Carter <m@ahungry.com>
 ;; Maintainer: Matthew Carter <m@ahungry.com>
 ;; URL: https://github.com/ahungry/geben-helm-projectile
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Keywords: ahungry emacs geben helm projectile debug
 ;; Package-Requires: ((emacs "24") (geben "0.26") (helm-projectile "0.13.0"))
 
@@ -35,12 +35,21 @@
 
 ;;; News:
 
+;;;; Changes since 0.0.1:
+;; - Disable require statement for geben due to issue in it's defadvice
+
 ;;;; Changes since 0.0.0:
 ;; - Created the project
 
-(eval-and-compile
-  (require 'geben)
-  (require 'helm-projectile))
+;; Commenting out at the moment, requiring geben causes a defadvice to trigger
+;; within the geben package, that breaks network functionality in much of
+;; the open-network-stream commands, with an error such as:
+;; `ad-Advice-open-network-stream: Wrong type argument: processp, nil'
+;; Will add again when issue is fixed in geben
+
+;;(eval-and-compile
+;;  (require 'geben)
+;;  (require 'helm-projectile))
 
 (defvar geben-helm-projectile-version "0.0.1")
 
