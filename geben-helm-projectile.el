@@ -1,6 +1,6 @@
 ;;; geben-helm-projectile.el --- Integrate helm-projectile with geben
 
-;; Copyright (C) 2016  Free Software Foundation, Inc.
+;; Copyright (C) 2016  Matthew Carter
 
 ;; Author: Matthew Carter <m@ahungry.com>
 ;; Maintainer: Matthew Carter <m@ahungry.com>
