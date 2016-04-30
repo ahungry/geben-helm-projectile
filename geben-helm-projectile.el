@@ -9,7 +9,7 @@
 ;; Keywords: ahungry emacs geben helm projectile debug
 ;; Package-Requires: ((emacs "24") (geben "0.26") (helm-projectile "0.13.0"))
 
-;; This file is not part of GNU Emacs.
+;; This file is not part of GNU Emacs
 
 ;;; License:
 
@@ -30,7 +30,7 @@
 
 ;; helm-projectile integration for geben (in particular, opening files)
 
-;; Make sure to include the project, then just run geben-helm-projectile/file
+;; Make sure to include the project, then just run geben-helm-projectile-file
 ;; during an interactive geben session to open a file related to the project.
 
 ;;; News:
