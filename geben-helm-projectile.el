@@ -1,4 +1,4 @@
-;;; geben-helm-projectile.el --- Integrate helm-projectile with geben.
+;;; geben-helm-projectile.el --- Integrate helm-projectile with geben
 
 ;; Copyright (C) 2016  Free Software Foundation, Inc.
 
@@ -54,7 +54,7 @@
 (defvar geben-helm-projectile-version "0.0.1")
 
 ;;; Code:
-(defun geben-helm-projectile/open-file (&optional arg)
+(defun geben-helm-projectile-open-file (&optional arg)
   "Find a file in the current project using helm-projectile to open it.
 
 Use a prefix ARG to force a cache refresh."
@@ -78,12 +78,6 @@ Use a prefix ARG to force a cache refresh."
                                                            "pattern: "
                                                          "Switch to project: "))
               ))))
-
-;;;###autoload
-(when (and load-file-name (boundp 'load-path))
- (add-to-list
-      'load-path
-      (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide 'geben-helm-projectile)
 
