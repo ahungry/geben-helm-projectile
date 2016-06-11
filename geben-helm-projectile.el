@@ -5,7 +5,7 @@
 ;; Author: Matthew Carter <m@ahungry.com>
 ;; Maintainer: Matthew Carter <m@ahungry.com>
 ;; URL: https://github.com/ahungry/geben-helm-projectile
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Keywords: ahungry emacs geben helm projectile debug
 ;; Package-Requires: ((emacs "24") (geben "0.26") (helm-projectile "0.13.0"))
 
@@ -35,6 +35,9 @@
 
 ;;; News:
 
+;;;; Changes since 0.0.2:
+;; - Added an autoload line for the interactive export function
+
 ;;;; Changes since 0.0.1:
 ;; - Disable require statement for geben due to issue in it's defadvice
 
@@ -54,6 +57,8 @@
 (defvar geben-helm-projectile-version "0.0.1")
 
 ;;; Code:
+
+;;;###autoload
 (defun geben-helm-projectile-open-file (&optional arg)
   "Find a file in the current project using helm-projectile to open it.
 
