@@ -28,7 +28,7 @@ Then, make sure to add the following to your ~/.emacs:
 During an interactive geben debug session, simply use:
 
 ```lisp
-M-x geben-helm-projectile/open-file
+M-x geben-helm-projectile-open-file
 ```
 to open the file prompt for the current repository.
 
